@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand: warm charcoal + saffron + tomato */
+    --background: 36 30% 97%;
+    --foreground: 20 14% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 14% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14% 12%;
+
+    --primary: 14 88% 55%;            /* tomato/saffron red */
+    --primary-foreground: 40 30% 98%;
+    --primary-glow: 28 95% 62%;
+
+    --secondary: 30 25% 94%;
+    --secondary-foreground: 20 14% 12%;
+
+    --muted: 30 20% 93%;
+    --muted-foreground: 20 8% 40%;
+
+    --accent: 38 95% 55%;             /* saffron/amber */
+    --accent-foreground: 20 14% 12%;
+
+    --success: 142 65% 38%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 14 88% 55%;
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(14 88% 55%) 0%, hsl(28 95% 62%) 50%, hsl(38 95% 60%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(36 30% 97%) 0%, hsl(30 25% 94%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(20 14% 12% / 0) 0%, hsl(20 14% 12% / 0.85) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(20 14% 12% / 0.08);
+    --shadow-elegant: 0 20px 50px -20px hsl(14 88% 55% / 0.25);
+    --shadow-glow: 0 0 40px hsl(28 95% 62% / 0.4);
+
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 20 14% 8%;
+    --foreground: 40 30% 96%;
+    --card: 20 14% 11%;
+    --card-foreground: 40 30% 96%;
+    --popover: 20 14% 11%;
+    --popover-foreground: 40 30% 96%;
+    --primary: 14 88% 58%;
+    --primary-foreground: 40 30% 98%;
+    --secondary: 20 10% 18%;
+    --secondary-foreground: 40 30% 96%;
+    --muted: 20 10% 16%;
+    --muted-foreground: 30 10% 65%;
+    --accent: 38 95% 58%;
+    --accent-foreground: 20 14% 12%;
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 20 10% 20%;
+    --input: 20 10% 20%;
+    --ring: 14 88% 58%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-feature-settings: 'ss01';
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .bg-hero-gradient { background: var(--gradient-hero); }
+  .bg-warm-gradient { background: var(--gradient-warm); }
+  .bg-dark-gradient { background: var(--gradient-dark); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .text-balance { text-wrap: balance; }
+}
